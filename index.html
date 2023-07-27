@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Food Gallery</title>
+
+       <!--- magnific-popup css cdn link -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+
+        <!-- custom css file link -->
+        <link rel="stylesheet" href="css/style.css">
+
+</head>
+<header>
+    <h1>Food Gallery</h1>
+    <p>Welcome to my food gallery website. Feel Free to view these pictures</p>
+    <br>
+    <script type="text/javascript" src="https://www.counters-free.net/count/ctra"></script><br>
+ <a href='https://www.free-counters.org/'>www.free-counters.org</a> <script type='text/javascript' src='https://www.whomania.com/ctr?id=7e74cacbe66ba10a8afb2750cce01a66a8174653'></script>
+</header>
+<body>
+
+    <div class="gallery">
+
+        <ul class="controls">
+            <li class="buttons active" data-filter="All">All</li>
+            <li class="buttons" data-filter="Candy">Candy</li>
+            <li class="buttons" data-filter="Doughnuts">Doughnuts</li>
+            <li class="buttons" data-filter="Dinner">Dinner</li>
+            <li class="buttons" data-filter="Cakes">Cakes</li>
+            <li class="buttons" data-filter="Pies">Pies</li>
+            <li class="buttons" data-filter="Cookies">Cookies</li>
+        </ul>
+
+    <div class="image-container">
+
+        <a href="cake1.jpg" class="image Cakes">
+            <img src="cake1.jpg" alt="">
+        </a>
+        <a href="cake2.jpg" class="image Cakes">
+            <img src="cake2.jpg" alt="">
+        </a>
+        <a href="cake3.jpg" class="image Cakes">
+            <img src="cake3.jpg" alt="">
+        </a>
+
+        <a href="pie1.jpg" class="image Pies">
+            <img src="pie1.jpg" alt="">
+        </a>
+        <a href="pie2.jpg" class="image Pies">
+            <img src="pie2.jpg" alt="">
+        </a>
+
+        <a href="cookie1.jpg" class="image Cookies">
+            <img src="cookie1.jpg" alt="">
+        </a>
+        <a href="cookie2.jpg" class="image Cookies">
+            <img src="cookie2.jpg" alt="">
+        </a>
+        <a href="cookie3.jpg" class="image Cookies">
+            <img src="cookie3.jpg" alt="">
+        </a>
+
+        <a href="donut1.jpg" class="image Doughnuts">
+            <img src="donut1.jpg" alt="">
+        </a>
+        <a href="donut2.jpg" class="image Doughnuts">
+            <img src="donut2.jpg" alt="">
+        </a>
+        <a href="donut3.jpg" class="image Doughnuts">
+            <img src="donut3.jpg" alt="">
+        </a>
+        <a href="donut4.jpg" class="image Doughnuts">
+            <img src="donut4.jpg" alt="">
+        </a>
+
+        <a href="candy1.jpg" class="image Candy">
+            <img src="candy1.jpg" alt="">
+        </a>
+        <a href="candy2.jpg" class="image Candy">
+            <img src="candy2.jpg" alt="">
+        </a>
+        <a href="candy3.jpg" class="image Candy">
+            <img src="candy3.jpg" alt="">
+        </a>
+        <a href="candy4.jpg" class="image Candy">
+            <img src="candy4.jpg" alt="">
+        </a>
+
+        <a href="dinner1.jpg" class="image Dinner">
+            <img src="dinner1.jpg" alt="">
+        </a>
+        <a href="dinner2.jpg" class="image Dinner">
+            <img src="dinner2.jpg" alt="">
+        </a>
+        <a href="dinner3.jpg" class="image Dinner">
+            <img src="dinner3.jpg" alt="">
+        </a>
+        <a href="dinner4.jpg" class="image Dinner">
+            <img src="dinner4.jpg" alt="">
+        </a>
+    </div>
+
+</div>
+
+   <!-- jquery cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!-- magnific popup js cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.buttons').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                var filter = $(this).attr('data-filter'); // Corrected 'data-filer' to 'data-filter'
+                if (filter == 'All') { // Changed 'all' to 'All' to match the data-filter values in HTML
+                    $('.image').show(400);
+                } else {
+                    $('.image').not('.' + filter).hide(200);
+                    $('.image').filter('.' + filter).show(400);
+                }
+            });
+
+            $('.gallery').magnificPopup({
+
+                delegate:'a',
+                type:'image',
+                gallery:{
+                    enabled:true
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+<footer>
+    <p>&copy; 2023 Food Gallery Website</p>
+  </footer>
+</html>
